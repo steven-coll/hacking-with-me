@@ -9,6 +9,6 @@ RUN apt install -y \
     php \
     libapache2-mod-php
 
-
+RUN adduser -D -g '' newuser
 
 ENTRYPOINT service apache2 start && /bin/bash
