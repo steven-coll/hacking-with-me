@@ -9,8 +9,4 @@ RUN apt install -y \
     php \
     libapache2-mod-php
 
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu
-USER ubuntu
-WORKDIR /home/ubuntu
-
 ENTRYPOINT service apache2 start && /bin/bash
