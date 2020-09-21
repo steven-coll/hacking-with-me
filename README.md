@@ -4,7 +4,7 @@ sudo apt install docker.io
 
 sudo apt install docker-compose
 
-git clone https://github.com/steven-coll/testaws.git
+git clone https://github.com/steven-coll/test.git
 
 cd testaws
 
