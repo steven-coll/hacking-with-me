@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    web:
+        build: .
+        ports:
+            - '20000:20000'
+        stdin_open: true
+        tty: true
+        volumes:
+            - ./photos:/photos
