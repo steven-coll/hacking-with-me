@@ -12,6 +12,5 @@ RUN apt-get update && \
                        cewl \
                        steghide \
 
-COPY photos /home
-
-ENTRYPOINT /bin/bash
+COPY photos /photos
+WORKDIR /data
