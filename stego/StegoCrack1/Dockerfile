@@ -30,6 +30,6 @@ RUN apt-get update && \
     pip3 install python-magic && \
     pip install tqdm
 
+COPY photos /home
 
-
-WORKDIR /photos
+ENTRYPOINT /bin/bash
