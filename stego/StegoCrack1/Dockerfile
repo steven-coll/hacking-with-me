@@ -1,11 +1,13 @@
-FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y \
-    git \
-    openssl \
-		gpg \
-		steghide
+FROM ubuntu:16.04
 
-COPY photos /photos
+MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
-SHELL ["/bin/bash", "-c"]
+RUN apt update
+
+RUN apt install -y \
+    apache2 \
+    php \
+    libapache2-mod-php
+
+ENTRYPOINT service apache2 start && /bin/bash
