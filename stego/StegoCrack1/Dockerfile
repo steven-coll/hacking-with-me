@@ -5,11 +5,11 @@ MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 RUN apt update
 
 RUN apt install -y \
-    apache2 \
+    steghide \
     php \
     libapache2-mod-php
     
 RUN mkdir /photos
 COPY ./photos /photos
 
-ENTRYPOINT /bin/bash
+RUN ["/bin/bash", "-c", "echo hello all in one string"]
