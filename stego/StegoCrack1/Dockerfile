@@ -1,4 +1,3 @@
-
 FROM ubuntu:16.04
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
