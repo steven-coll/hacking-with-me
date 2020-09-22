@@ -7,7 +7,7 @@ RUN apt update
 RUN apt install -y \
     steghide \
     php \
-    libapache2-mod-php
+    john
     
 RUN mkdir /photos
 COPY ./photos /photos
