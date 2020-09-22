@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
-RUN apt get update && \
+RUN apt update && \
         apt install -y software-properties-common && \
         add -repository ppa:deadsnakes/ppa && \
         apt update -y  && \
