@@ -6,7 +6,6 @@ RUN apt update
 
 RUN apt install -y \
     steghide \
-    php \
     john
     
 RUN mkdir /photos
