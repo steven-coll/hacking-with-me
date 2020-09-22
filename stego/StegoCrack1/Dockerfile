@@ -9,9 +9,8 @@ RUN apt-get update && \
         add -repository ppa:deadsnakes/ppa && \
         apt update -y  && \
         apt install -y build-essential python3.6 python3.6-dev python3-pip && \
+        apt install steghide \
         apt install -y git  && \
-        apt install steghide
-        apt install 
         # update pip
         python3.6 -m pip install pip --upgrade && \
         python3.6 -m pip install wheel \
