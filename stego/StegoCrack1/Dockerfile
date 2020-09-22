@@ -6,8 +6,13 @@ RUN apt update
 
 RUN apt install -y \
     steghide \
-    john
-    
+    python3.6 \
+    python3.6-pip \
+    && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* \
+    stegcracker
+
 RUN mkdir /photos
 COPY ./photos /photos
 
