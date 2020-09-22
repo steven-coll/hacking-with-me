@@ -6,13 +6,15 @@ RUN apt update
 
 RUN apt install -y \
     steghide \
-    python \
-    python-pip \
-    && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* \
-    pip-install stegcracker
+    john
+    
+RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv && \
+        apt-get install -y git
 
+# update pip
+RUN python3.6 -m pip install pip --upgrade && \
+        python3.6 -m pip install wheel && \
+        python3.6 -m pip3 install stegcracker
 
 RUN mkdir /photos
 COPY ./photos /photos
