@@ -12,4 +12,4 @@ RUN apt install -y \
 RUN mkdir /photos
 COPY ./photos /photos
 
-ENTRYPOINT service apache2 start && /bin/bash
+ENTRYPOINT /bin/bash
