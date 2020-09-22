@@ -10,9 +10,9 @@ RUN apt install -y \
     python-pip \
     && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* 
+    rm -rf /var/lib/apt/lists/* \
+    pip-install stegcracker
 
-RUN pip-install stegcracker
 
 RUN mkdir /photos
 COPY ./photos /photos
