@@ -6,12 +6,13 @@ RUN apt update
 
 RUN apt install -y \
     steghide \
-    python3.6 \
-    python3.6-pip \
+    python \
+    python-pip \
     && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* \
-    stegcracker
+    rm -rf /var/lib/apt/lists/* 
+
+RUN pip-install stegcracker
 
 RUN mkdir /photos
 COPY ./photos /photos
