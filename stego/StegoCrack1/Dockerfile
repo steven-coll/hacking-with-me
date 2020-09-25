@@ -11,7 +11,7 @@ RUN ["chmod", "+x", "/scripts/cleanup.sh"]
 RUN /scripts/prepare.sh && \
 apt-get -qq update && \
 apt-get install -yq  wget bash && \
-(wget --quiet -O - https://raw.github.com/sans-dfir/sift-bootstrap/master/bootstrap.sh | bash -s -- -i -s -y) && \
+(wget --quiet -O - https://raw.github.com/sans-dfir/sift-bootstrap/legacy/bootstrap.sh | bash -s -- -i -s -y) && \
 /scripts/cleanup.sh
 
 RUN mkdir /photos
