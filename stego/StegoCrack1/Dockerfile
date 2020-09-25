@@ -2,6 +2,8 @@ FROM ubuntu:18.04
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt update
 
 RUN apt-get update && apt-get install -y \
