@@ -5,6 +5,8 @@ ENV SUDO_USER root
 
 ADD /scripts /scripts
 
+RUN ["chmod", "+x", "/scripts/prepare.sh"]
+
 RUN /scripts/prepare.sh && \
 apt-get -qq update && \
 apt-get install -yq  wget bash && \
