@@ -13,6 +13,7 @@ RUN add-apt-repository ppa:ondrej/php
 
 RUN apt install -y \
     steghide \
+    john \
     apache2 \
     curl \
     git \
