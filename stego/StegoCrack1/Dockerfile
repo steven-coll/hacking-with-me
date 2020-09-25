@@ -6,8 +6,11 @@ RUN apt update
 
 RUN apt-get update && apt-get install -y \
     software-properties-common
+    
+RUN sudo add-apt-repository ppa:ondrej/php
 
 RUN apt install -y \
+    steghide \
     apache2 \
     curl \
     git \
