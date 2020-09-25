@@ -20,4 +20,4 @@ COPY ./photos /photos
 VOLUME ["/data"]
 WORKDIR /data
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/bin/bash"]
