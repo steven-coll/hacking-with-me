@@ -11,10 +11,10 @@ RUN apt install -y \
     apache2 \
     curl \
     git \
-    libapache2-mod-php5 \
-    php5 \
-    php5-mcrypt \
-    php5-mysql \
+    libapache2-mod-php \
+    php7 \
+    php7-mcrypt \
+    php7-mysql \
     python3.7 \
     python3-pip
 
