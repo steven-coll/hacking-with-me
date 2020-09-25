@@ -1,23 +1,15 @@
-FROM ubuntu:14.04.5
-MAINTAINER kost - https://github.com/kost
+FROM ubuntu:16.04
 
-ENV SUDO_USER root
+MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
-ADD /scripts /scripts
+RUN apt update
 
-RUN ["chmod", "+x", "/scripts/prepare.sh"]
-RUN ["chmod", "+x", "/scripts/cleanup.sh"]
-
-RUN /scripts/prepare.sh && \
-apt-get -qq update && \
-apt-get install -yq  wget bash && \
-(wget --quiet -O - https://raw.github.com/sans-dfir/sift-bootstrap/legacy/bootstrap.sh | bash -s -- -i -s -y) && \
-/scripts/cleanup.sh
+RUN apt install -y \
+    steghide \
+    stegcracker 
+    
 
 RUN mkdir /photos
 COPY ./photos /photos
-
-VOLUME ["/data"]
-WORKDIR /data
 
 ENTRYPOINT ["/bin/bash"]
