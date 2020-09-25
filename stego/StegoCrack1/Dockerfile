@@ -1,15 +1,20 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04.5
+MAINTAINER kost - https://github.com/kost
 
-MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
+ENV SUDO_USER root
 
-RUN apt update
+ADD /scripts /scripts
 
-RUN apt install -y \
-    steghide \
-    stegcracker 
-    
+RUN /scripts/prepare.sh && \
+apt-get -qq update && \
+apt-get install -yq  wget bash && \
+(wget --quiet -O - https://raw.github.com/sans-dfir/sift-bootstrap/master/bootstrap.sh | bash -s -- -i -s -y) && \
+/scripts/cleanup.sh
 
 RUN mkdir /photos
 COPY ./photos /photos
 
-ENTRYPOINT ["/bin/bash"]
+VOLUME ["/data"]
+WORKDIR /data
+
+ENTRYPOINT ["/bin/sh"]
