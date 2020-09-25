@@ -11,7 +11,7 @@ RUN apt install -y \
     apache2 \
     curl \
     git \
-    libapache2-mod-php \
+    libapache2-mod-php7.0 \
     php7 \
     php7-mcrypt \
     php7-mysql \
