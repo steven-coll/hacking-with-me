@@ -6,7 +6,7 @@ sudo apt install docker-compose
 
 git clone https://github.com/steven-coll/test.git
 
-cd testaws
+cd test
 
 sudo docker-compose build
 
