@@ -8,15 +8,10 @@ RUN apt-get update && apt-get install -y \
     software-properties-common
 
 RUN apt install -y \
-    steghide \
+    apache2 \
     curl \
     git \
-    wget \
-    make \
-    sudo \
-    bash-completion \
-    tree \
-    vim \
+    libapache2-mod-php5 \
     php5 \
     php5-mcrypt \
     php5-mysql \
