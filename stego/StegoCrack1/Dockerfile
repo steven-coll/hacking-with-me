@@ -8,7 +8,7 @@ RUN apt install -y \
     steghide \
     john
     
-RUN python3 -m pip install --user stegcracker    
+RUN pip install --user stegcracker    
 
 RUN mkdir /photos
 COPY ./photos /photos
