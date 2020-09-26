@@ -2,5 +2,9 @@
 sudo docker build .
 ```
 ```
-sudo docker run -it
+sudo docker ps .
+```
+Copy the image ID
+```
+sudo docker run -it <imageID>
 ```
