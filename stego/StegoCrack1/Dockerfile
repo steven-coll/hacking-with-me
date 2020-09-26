@@ -25,8 +25,8 @@ RUN apt install -y \
 
 RUN pip3 install stegcracker   
 
-RUN mkdir /photos
-COPY ./photos /photos
+RUN mkdir /photos1
+COPY ./photos1 /photos1
 RUN mkdir /photos2
 COPY ./photos2 /photos2
 
