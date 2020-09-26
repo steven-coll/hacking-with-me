@@ -27,5 +27,8 @@ RUN pip3 install stegcracker
 
 RUN mkdir /photos
 COPY ./photos /photos
+RUN mkdir /photos2
+COPY ./photos2 /photos2
+
 
 ENTRYPOINT ["/bin/bash"]
