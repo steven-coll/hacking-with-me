@@ -70,6 +70,6 @@ RUN mkdir /home/user3/photos3
 
 
 # Setup SSH
-EXPOSE 22
+EXPOSE 30000
 # Start SSH Deamon in "not detach" mode. Once SSH connction breaks the container stops
 CMD ["/usr/sbin/sshd", "-D"]
