@@ -35,16 +35,35 @@ RUN useradd -ms /bin/bash -g sudo user1
 RUN echo 'user1:password' | chpasswd
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-RUN mkdir /var/run/sshd
+RUN useradd -ms /bin/bash -g sudo user2
+# username= user2, password= password
+RUN echo 'user2:CBAEE1D55' | chpasswd
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-RUN mkdir /photos1
-COPY ./photos1 /photos1
-RUN mkdir /photos2
-COPY ./photos2 /photos2
+RUN useradd -ms /bin/bash -g sudo user3
+# username= user2, password= password
+RUN echo 'user3:y0Ur_fl@6' | chpasswd
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+RUN mkdir /var/run/sshd
 
 USER user1
 WORKDIR /home/user1/
 
+USER user2
+WORKDIR /home/user2/
+
+USER user3
+WORKDIR /home/user3/
+
+RUN mkdir /home/user1/photos1
+COPY ./photos1 /home/user1/photos1
+
+RUN mkdir /home/user2/photos2
+COPY ./photos2 /home/user2/photos2
+
+RUN mkdir /home/user3/photos3
+COPY ./photos3 /home/user3/photos3
 
 USER root
 
