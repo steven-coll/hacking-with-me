@@ -65,7 +65,7 @@ RUN mkdir /home/user2/photos2
 COPY ./photos2 /home/user2/photos2
 
 RUN mkdir /home/user3/photos3
-COPY ./photos3 /home/user3/photos3
+
 
 
 
