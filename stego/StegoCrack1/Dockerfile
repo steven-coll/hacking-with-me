@@ -22,7 +22,7 @@ RUN apt install -y \
     php-mysql \
     mysql-server \
     python3.7 \
-    python3-pip
+    python3-pip \
     openssh-server \
     vim \
     apt-utils \
