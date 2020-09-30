@@ -8,4 +8,4 @@ Copy the image ID
 ```
 sudo docker run -it <imageID>
 ```
-Commands: cd, ls,cat, steghide, stegcracker, john, base64
+Commands: cd, ls,cat, steghide, stegcracker, john (wordlist), base64
