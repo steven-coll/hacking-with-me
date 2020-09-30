@@ -11,20 +11,6 @@ RUN apt-get update && apt-get install -y \
     
 RUN add-apt-repository ppa:ondrej/php
 
-RUN apt-get install -y openssh-server
-RUN mkdir /var/run/sshd
-
-RUN echo 'root:root' |chpasswd
-
-RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
-
-RUN mkdir /root/.ssh
-
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-
 
 RUN apt install -y \
     steghide \
@@ -37,15 +23,32 @@ RUN apt install -y \
     mysql-server \
     python3.7 \
     python3-pip
-
+    openssh-server \
+    vim \
+    apt-utils \
+    iputils-ping \
+    sudo
 RUN pip3 install stegcracker   
+
+RUN useradd -ms /bin/bash -g sudo user1
+# username= user1, password= password
+RUN echo 'user1:password' | chpasswd
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+RUN mkdir /var/run/sshd
 
 RUN mkdir /photos1
 COPY ./photos1 /photos1
 RUN mkdir /photos2
 COPY ./photos2 /photos2
 
+USER user1
+WORKDIR /home/user1/
+
+
+USER root
+
+# Setup SSH
 EXPOSE 22
-
-CMD    ["/usr/sbin/sshd", "-D"]
-
+# Start SSH Deamon in "not detach" mode. Once SSH connction breaks the container stops
+CMD ["/usr/sbin/sshd", "-D"]
