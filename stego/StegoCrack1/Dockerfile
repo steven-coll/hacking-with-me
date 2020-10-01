@@ -27,23 +27,24 @@ RUN apt install -y \
     vim \
     apt-utils \
     iputils-ping \
-    sudo
+    sudo \
+    ifconfig \
+    ip a 
 RUN pip3 install stegcracker   
 
-RUN useradd -ms /bin/bash -g sudo user1
+RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user1
 # username= user1, password= password
 RUN echo 'user1:password' | chpasswd
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-RUN useradd -ms /bin/bash -g sudo user2
+RUN useradd -ms /bin/bash -g sshgroup user2
 # username= user2, password= password
 RUN echo 'user2:CBAEE1D55' | chpasswd
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-RUN useradd -ms /bin/bash -g sudo user3
+
+RUN groupadd && useradd -ms /bin/bash -g sshgroup user3
 # username= user2, password= password
 RUN echo 'user3:y0Ur_fl@6' | chpasswd
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 
 RUN mkdir /var/run/sshd
 
@@ -65,9 +66,6 @@ RUN mkdir /home/user2/photos2
 COPY ./photos2 /home/user2/photos2
 
 RUN mkdir /home/user3/photos3
-
-
-
 
 # Setup SSH
 EXPOSE 22
