@@ -27,9 +27,7 @@ RUN apt install -y \
     vim \
     apt-utils \
     iputils-ping \
-    sudo \
-    ifconfig \
-    ip a 
+    sudo 
 RUN pip3 install stegcracker   
 
 RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user1
