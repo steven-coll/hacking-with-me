@@ -49,21 +49,27 @@ RUN mkdir /var/run/sshd
 USER user1
 WORKDIR /home/user1/
 
-USER user2
-WORKDIR /home/user2/
-
-USER user3
-WORKDIR /home/user3/
-
-USER root
-
 RUN mkdir /home/user1/photos1
 COPY ./photos1 /home/user1/photos1
+
+USER user2
+WORKDIR /home/user2/
 
 RUN mkdir /home/user2/photos2
 COPY ./photos2 /home/user2/photos2
 
+USER user3
+WORKDIR /home/user3/
+
 RUN mkdir /home/user3/photos3
+
+USER root
+
+
+
+
+
+
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd
