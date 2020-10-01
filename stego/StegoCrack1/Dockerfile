@@ -39,7 +39,7 @@ RUN useradd -ms /bin/bash -g sshgroup user2
 RUN echo 'user2:CBAEE1D55' | chpasswd
 
 
-RUN groupadd && useradd -ms /bin/bash -g sshgroup user3
+RUN useradd -ms /bin/bash -g sshgroup user3
 # username= user2, password= password
 RUN echo 'user3:y0Ur_fl@6' | chpasswd
 
