@@ -4,7 +4,7 @@ services:
     web:
         build: .
         ports:
-            - '10008:80'
+            - '10008:443'
         stdin_open: true
         tty: true
         volumes:
