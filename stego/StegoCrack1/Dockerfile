@@ -27,9 +27,9 @@ RUN apt install -y \
     vim \
     apt-utils \
     iputils-ping \
-    sudo \
-    wordlists
+    sudo 
 RUN pip3 install stegcracker   
+
 
 RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user0
 # username= user1, password= password
