@@ -31,9 +31,13 @@ RUN apt install -y \
     wordlist
 RUN pip3 install stegcracker   
 
-RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user1
+RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user0
 # username= user1, password= password
-RUN echo 'user1:password' | chpasswd
+RUN echo 'user0:password' | chpasswd
+
+RUN useradd -ms /bin/bash -g sshgroup user1
+# username= user1, password= password
+RUN echo 'user1:BCDEFGHIJKLMNOPQRSTUVWXYZA' | chpasswd
 
 RUN useradd -ms /bin/bash -g sshgroup user2
 # username= user2, password= password
@@ -46,6 +50,12 @@ RUN echo 'user3:y0Ur_fl@6' | chpasswd
 
 
 RUN mkdir /var/run/sshd
+
+USER user0
+WORKDIR /home/user0/
+
+RUN mkdir /home/user0/photos
+COPY ./photos /home/user0/photos
 
 USER user1
 WORKDIR /home/user1/
