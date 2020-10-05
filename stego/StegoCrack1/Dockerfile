@@ -28,7 +28,7 @@ RUN apt install -y \
     apt-utils \
     iputils-ping \
     sudo \
-    wordlist
+    wordlists
 RUN pip3 install stegcracker   
 
 RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user0
