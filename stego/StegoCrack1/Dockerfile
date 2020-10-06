@@ -62,12 +62,14 @@ WORKDIR /home/user1/
 
 RUN mkdir /home/user1/photos1
 COPY ./photos1 /home/user1/photos1
+COPY ./wordlists/wordlist.txt /home/user1/wordlists
 
 USER user2
 WORKDIR /home/user2/
 
 RUN mkdir /home/user2/photos2
 COPY ./photos2 /home/user2/photos2
+COPY ./wordlists/wordlist.txt /home/user2/wordlists
 
 USER user3
 WORKDIR /home/user3/
