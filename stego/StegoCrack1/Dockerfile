@@ -85,8 +85,7 @@ COPY ./wordlists/wordlist.txt /home/user2/wordlists
 
 USER user3
 WORKDIR /home/user3/
-
-RUN mkdir /home/user3/photos3
+COPY ./password.mp4 /home/user3
 
 USER root
 
