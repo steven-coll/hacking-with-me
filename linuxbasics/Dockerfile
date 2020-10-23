@@ -27,8 +27,6 @@ RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user0
 # username= user, password= password
 RUN echo 'user0:password' | chpasswd
 
-#here I create the directory for ssh
-RUN mkdir /var/run/sshd
 
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
 USER user0
