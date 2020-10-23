@@ -41,4 +41,4 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 # Setup SSH
 EXPOSE 22
 # Start SSH Deamon in "not detach" mode. Once SSH connction breaks the container stops
-CMD ["/bin/bash", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
