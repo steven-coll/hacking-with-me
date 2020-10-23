@@ -21,51 +21,12 @@ RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user0
 # username= user, password= password
 RUN echo 'user0:password' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user1
-# username= user1, password= password
-RUN echo 'user1:BCDEFGHIJKLMNOPQRSTUVWXYZA' | chpasswd
-
-RUN useradd -ms /bin/bash -g sshgroup user2
-# username= user, password= password
-RUN echo 'user2:CBAEE1D55' | chpasswd
-
-
-RUN useradd -ms /bin/bash -g sshgroup user3
-# username= user, password= password
-RUN echo 'user3:y0Ur_fl@6' | chpasswd
-
 #here I create the directory for ssh
 RUN mkdir /var/run/sshd
 
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
 USER user0
 WORKDIR /home/user0/
-
-#here I make a directory to hold the photos in user0
-RUN mkdir /home/user0/photos
-
-#here I copy the /photos folder from my github, and put it in the user0/photos folder
-COPY ./photos /home/user0/photos
-
-USER user1
-WORKDIR /home/user1/
-
-RUN mkdir /home/user1/photos1
-RUN mkdir /home/user1/wordlists
-COPY ./photos1 /home/user1/photos1
-COPY ./wordlists/wordlist.txt /home/user1/wordlists
-
-USER user2
-WORKDIR /home/user2/
-
-RUN mkdir /home/user2/photos2
-RUN mkdir /home/user2/wordlists
-COPY ./photos2 /home/user2/photos2
-COPY ./wordlists/wordlist.txt /home/user2/wordlists
-
-USER user3
-WORKDIR /home/user3/
-COPY ./password.mp4 /home/user3
 
 USER root
 
