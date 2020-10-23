@@ -12,7 +12,6 @@ RUN apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove && apt
 RUN apt-get update && apt-get install -y \
     software-properties-common    
 
-RUN service postgresql start && msfdb init && service postgresql stop
 
 VOLUME /root /var/lib/postgresql
 
