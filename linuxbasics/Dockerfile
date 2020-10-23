@@ -1,5 +1,5 @@
 #this is the base ubuntu image I am using, the rest of the things in this file build off this
-FROM kalilinux/kali-linux-docker:latest
+FROM kalilinux/kali-rolling:latest
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
