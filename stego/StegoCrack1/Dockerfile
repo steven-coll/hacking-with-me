@@ -54,6 +54,14 @@ RUN useradd -ms /bin/bash -g sshgroup user3
 # username= user, password= password
 RUN echo 'user3:y0Ur_fl@6' | chpasswd
 
+RUN useradd -ms /bin/bash -g sshgroup user4
+# username= user, password= password
+RUN echo 'user4:HnTCkTKEyJ' | chpasswd
+
+RUN useradd -ms /bin/bash -g sshgroup user5
+# username= user, password= password
+RUN echo 'user5:tUHXkTQwoT' | chpasswd
+
 #here I create the directory for ssh
 RUN mkdir /var/run/sshd
 
@@ -85,11 +93,13 @@ COPY ./wordlists/wordlist.txt /home/user2/wordlists
 
 USER user3
 WORKDIR /home/user3/
-COPY ./password.mp4 /home/user3
+COPY ./user3/password.mp4 /home/user3
+
+USER user4
+WORKDIR /home/user4/
+COPY ./user4/skate.jpg /home/user4
 
 USER root
-
-
 
 
 
