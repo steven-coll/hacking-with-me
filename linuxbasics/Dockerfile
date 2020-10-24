@@ -36,6 +36,10 @@ RUN useradd -ms /bin/bash -g sshgroup user2
 # username= user, password= password
 RUN echo 'user2:sIvov657xw' | chpasswd
 
+RUN useradd -ms /bin/bash -g sshgroup user3
+# username= user, password= password
+RUN echo 'user3:2gmAU9RAUq' | chpasswd
+
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
 USER user0
 WORKDIR /home/user0/
@@ -44,7 +48,13 @@ COPY ./password0.txt /home/user0/passwordfolder
 
 USER user1
 WORKDIR /home/user1/
-COPY ./password1.zip /home/user0/
+COPY ./password1.zip /home/user1/
+
+USER user2
+WORKDIR /home/user2/
+COPY ./.password2.txt /home/user2/
+
+
 
 USER root
 
