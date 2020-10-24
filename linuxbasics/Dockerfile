@@ -78,7 +78,7 @@ COPY ./user4/flaginhere.txt /home/user4/
 
 USER user5
 WORKDIR /home/user5/
-COPY ./user5/@ /home/user4/
+COPY ./user5/- /home/user5/
 
 USER root
 
