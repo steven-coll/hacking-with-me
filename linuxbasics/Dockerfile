@@ -31,6 +31,8 @@ RUN echo 'user0:password' | chpasswd
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
 USER user0
 WORKDIR /home/user0/
+RUN mkdir /home/user0/passwordfolder
+COPY ./password0.txt /home/user0/passwordfolder
 
 USER root
 
