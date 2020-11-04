@@ -83,7 +83,7 @@ COPY ./user5/- /home/user5/
 USER root
 
 COPY ./etc/motd /usr/bin/kali-motd
-RUN chmod 755 /usr/bin/kali-motd
+RUN chmod +x /usr/bin/kali-motd
 
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
