@@ -68,6 +68,9 @@ RUN useradd -ms /bin/bash -g sshgroup user6
 # username= user, password= password
 RUN echo 'user6:96OvxWC9c4' | chpasswd
 
+RUN useradd -ms /bin/bash -g sshgroup user7
+# username= user, password= password
+RUN echo 'user7:1aAtLEN2TK' | chpasswd
 
 #here I create the directory for ssh
 RUN mkdir /var/run/sshd
@@ -109,6 +112,10 @@ COPY ./user4/skate.jpg /home/user4
 USER user5
 WORKDIR /home/user5/
 COPY ./user5 /home/user5
+
+USER user6
+WORKDIR /home/user6/
+COPY ./user6 /home/user6
 
 
 USER root
