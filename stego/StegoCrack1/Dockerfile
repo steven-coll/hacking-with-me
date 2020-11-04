@@ -117,7 +117,6 @@ USER user6
 WORKDIR /home/user6/
 COPY ./user6 /home/user6
 
-
 USER root
 
 # SSH login fix. Otherwise user is kicked off after login
