@@ -82,8 +82,7 @@ COPY ./user5/- /home/user5/
 
 USER root
 
-COPY ./etc/motd /etc/motd
-RUN echo "cat /etc/motd\n" >> /.bashrc
+COPY ./etc/motd /usr/bin/kali-motd
 
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
