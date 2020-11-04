@@ -1,0 +1,21 @@
+    ██╗  ██╗ █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗ ██╗    ██╗██╗████████╗██╗  ██╗   ███╗   ███╗███████╗
+    ██║  ██║██╔══██╗██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝ ██║    ██║██║╚══██╔══╝██║  ██║   ████╗ ████║██╔════╝
+    ███████║███████║██║     █████╔╝ ██║██╔██╗ ██║██║  ███╗██║ █╗ ██║██║   ██║   ███████║   ██╔████╔██║█████╗  
+    ██╔══██║██╔══██║██║     ██╔═██╗ ██║██║╚██╗██║██║   ██║██║███╗██║██║   ██║   ██╔══██║   ██║╚██╔╝██║██╔══╝  
+    ██║  ██║██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝╚███╔███╔╝██║   ██║   ██║  ██║██╗██║ ╚═╝ ██║███████╗
+    ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚══╝╚══╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝
+
+    If you run into issues, email stevenrobertcoll@gmail.com.
+
+    DO NOT DO ANYTHING ILLEGAL
+
+    These challenges are created in Docker Containers.
+      Each user will get their own shell and changes made will not be saved.
+      You can find hints for commands on the hackingwith.me website
+      If you don't know how to use a command use either, man <command>, or <command> --help, for guidance.
+
+    Usernames for logging into the challenges will go from user0, user1, user2, etc.
+      The flags you find in the challenges will be the password for the next user.
+      The flags are either named as flag or password.
+
+      Have fun!
