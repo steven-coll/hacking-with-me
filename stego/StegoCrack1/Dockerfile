@@ -63,6 +63,11 @@ RUN useradd -ms /bin/bash -g sshgroup user5
 # username= user, password= password
 RUN echo 'user5:tUHXkTQwoT' | chpasswd
 
+RUN useradd -ms /bin/bash -g sshgroup user6
+# username= user, password= password
+RUN echo 'user5:96OvxWC9c4' | chpasswd
+
+
 #here I create the directory for ssh
 RUN mkdir /var/run/sshd
 
@@ -100,11 +105,12 @@ USER user4
 WORKDIR /home/user4/
 COPY ./user4/skate.jpg /home/user4
 
+USER user5
+WORKDIR /home/user5/
+COPY ./user5/ /home/user5
+
+
 USER root
-
-
-
-
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd
