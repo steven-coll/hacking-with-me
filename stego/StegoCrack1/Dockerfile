@@ -65,7 +65,7 @@ RUN echo 'user5:tUHXkTQwoT' | chpasswd
 
 RUN useradd -ms /bin/bash -g sshgroup user6
 # username= user, password= password
-RUN echo 'user5:96OvxWC9c4' | chpasswd
+RUN echo 'user6:96OvxWC9c4' | chpasswd
 
 
 #here I create the directory for ssh
