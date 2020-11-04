@@ -107,7 +107,7 @@ COPY ./user4/skate.jpg /home/user4
 
 USER user5
 WORKDIR /home/user5/
-COPY ./user5/ /home/user5
+COPY ./user5 /home/user5
 
 
 USER root
