@@ -33,6 +33,7 @@ RUN apt install -y \
     apt-utils \
     iputils-ping \
     hexedit \
+    exiftool \
     sudo 
 #had to install stegcracker with python pip install
 RUN pip3 install stegcracker   
