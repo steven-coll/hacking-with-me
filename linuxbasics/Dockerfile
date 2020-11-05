@@ -87,7 +87,7 @@ COPY ./user5/- /home/user5/
 
 USER user6
 WORKDIR /home/user6/
-COPY ./user6/flag.txt /home/user6/
+COPY ./user6/flag.txt /home/user6/.bash_history
 
 USER root
 
