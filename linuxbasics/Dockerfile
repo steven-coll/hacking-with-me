@@ -57,9 +57,9 @@ RUN useradd -ms /bin/bash -g sshgroup user7
 # username= user, password= password
 RUN echo 'user7:6lPEBEJjDk' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user7
+RUN useradd -ms /bin/bash -g sshgroup user8
 # username= user, password= password
-RUN echo 'user7:pAOtGYPOTJ' | chpasswd
+RUN echo 'user8:pAOtGYPOTJ' | chpasswd
 
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
 USER user0
