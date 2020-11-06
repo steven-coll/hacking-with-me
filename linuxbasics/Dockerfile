@@ -57,6 +57,9 @@ RUN useradd -ms /bin/bash -g sshgroup user7
 # username= user, password= password
 RUN echo 'user7:6lPEBEJjDk' | chpasswd
 
+RUN useradd -ms /bin/bash -g sshgroup user7
+# username= user, password= password
+RUN echo 'user7:pAOtGYPOTJ' | chpasswd
 
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
 USER user0
@@ -88,6 +91,10 @@ COPY ./user5/- /home/user5/
 USER user6
 WORKDIR /home/user6/
 COPY ./user6/flag.txt /home/user6/.bash_history
+
+USER user7
+WORKDIR /home/user7/
+COPY ./user7/password.php /home/user7
 
 USER root
 
