@@ -94,7 +94,7 @@ COPY ./user6/flag.txt /home/user6/.bash_history
 
 USER user7
 WORKDIR /home/user7/
-COPY ./user7/password.php /home/user7
+COPY ./user7/password.txt /home/user7
 
 USER root
 
