@@ -96,6 +96,10 @@ USER user7
 WORKDIR /home/user7/
 COPY ./user7/password7.txt /home/user7
 
+USER user8
+WORKDIR /home/user8/
+COPY ./user8/ /home/user8
+
 USER root
 
 COPY ./etc/motd /usr/bin/kali-motd
