@@ -16,7 +16,7 @@ RUN apt-get update \
     && apt-get install -y openssh-server \
     && apt-get install -y unzip \
     && apt-get install -y grep \
-    && mkdir /var/run/sshd \
+    && mkdir /var/run/sshd 
 
     
 VOLUME /root /var/lib/postgresql
