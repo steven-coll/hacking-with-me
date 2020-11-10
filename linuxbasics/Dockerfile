@@ -96,7 +96,7 @@ COPY ./user7/password7.txt /home/user7
 USER user8
 WORKDIR /home/user8/
 COPY ./user8/ /home/user8
-CMD exit
+RUN ~.
 
 USER root
 
