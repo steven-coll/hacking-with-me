@@ -96,10 +96,13 @@ COPY ./user7/password7.txt /home/user7
 USER user8
 WORKDIR /home/user8/
 COPY ./user8/ /home/user8
+USER root
 RUN chmod +x ./exit.sh
 
-USER root
+USER user8
+RUN ./exit.sh
 
+USER root
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
 
