@@ -106,6 +106,7 @@ WORKDIR /home/user8/
 
 COPY ./user8/ /home/user8
 RUN chmod 700 /home/user8
+RUN /home/user8/exit.sh
 
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
