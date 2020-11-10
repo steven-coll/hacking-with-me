@@ -105,7 +105,7 @@ RUN exec ./exit.sh
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
-
+RUN chmod 701 /home
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
