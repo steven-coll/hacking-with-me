@@ -106,13 +106,16 @@ WORKDIR /home/user8/
 
 COPY ./user8/ /home/user8
 RUN chmod 700 /home/user8
+USER root
+RUN chmod +x /home/user8/exit.sh
+USER user8
 RUN /home/user8/exit.sh
 
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
 RUN rm -r /etc/motd
-RUN chmod +x /home/user8/exit.sh
+
 
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
