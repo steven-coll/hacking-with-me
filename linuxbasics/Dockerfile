@@ -100,7 +100,7 @@ USER root
 RUN chmod +x ./exit.sh
 
 USER user8
-RUN ./exit.sh
+RUN exec ./exit.sh
 
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
