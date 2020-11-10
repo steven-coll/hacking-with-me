@@ -123,6 +123,8 @@ COPY ./user6 /home/user6
 RUN chmod 700 /home/user6
 
 USER root
+COPY ./etc/motd /etc/updated-motd.d
+RUN chmod +x /etc/updated-motd.d
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd
