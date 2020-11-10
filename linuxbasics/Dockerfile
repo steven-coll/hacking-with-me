@@ -17,11 +17,9 @@ RUN apt-get update \
     && apt-get install -y unzip \
     && apt-get install -y grep \
     && mkdir /var/run/sshd \
-    && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config \
-    && echo 'root:kali' | chpasswd
-
+    
 VOLUME /root /var/lib/postgresql
 
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
@@ -29,35 +27,35 @@ RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user0
 # username= user, password= password
 RUN echo 'user0:password' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user1
+RUN groupadd sshgroup1 && useradd -ms /bin/bash -g sshgroup1 user1
 # username= user1, password= password
 RUN echo 'user1:E8K3mU91H2' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user2
+RUN groupadd sshgroup2 && useradd -ms /bin/bash -g sshgroup2 user2
 # username= user, password= password
 RUN echo 'user2:sIvov657xw' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user3
+RUN groupadd sshgroup3 && useradd -ms /bin/bash -g sshgroup3 user3
 # username= user, password= password
 RUN echo 'user3:2gmAU9RAUq' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user4
+RUN groupadd sshgroup4 && useradd -ms /bin/bash -g sshgroup4 user4
 # username= user, password= password
 RUN echo 'user4:04car90268' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user5
+RUN groupadd sshgroup5 && useradd -ms /bin/bash -g sshgroup5 user5
 # username= user, password= password
 RUN echo 'user5:NcSlkqKk2V' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user6
+RUN groupadd sshgroup6 && useradd -ms /bin/bash -g sshgroup6 user6
 # username= user, password= password
 RUN echo 'user6:AOndY1BmKz' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user7
+RUN groupadd sshgroup7 && useradd -ms /bin/bash -g sshgroup7 user7
 # username= user, password= password
 RUN echo 'user7:6lPEBEJjDk' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup user8
+RUN groupadd sshgroup8 && useradd -ms /bin/bash -g sshgroup8 user8
 # username= user, password= password
 RUN echo 'user8:CDtOGH8SZ2QsuIii9SBr' | chpasswd
 
