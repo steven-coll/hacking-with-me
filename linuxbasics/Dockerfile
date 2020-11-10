@@ -63,31 +63,38 @@ USER user0
 WORKDIR /home/user0/
 RUN mkdir /home/user0/passwordfolder
 COPY ./user0/password0.txt /home/user0/passwordfolder
+RUN chmod 700 /home/user0
 
 USER user1
 WORKDIR /home/user1/
 COPY ./user1/password1.zip /home/user1/
+RUN chmod 700 /home/user1
 
 USER user2
 WORKDIR /home/user2/
 COPY ./user2/.password2.txt /home/user2/
+RUN chmod 700 /home/user2
 
 USER user3
 WORKDIR /home/user3/
 COPY ./user3/password3.txt /home/user3/
+RUN chmod 700 /home/user3
 
 USER user4
 WORKDIR /home/user4/
 COPY ./user4/original.txt /home/user4/
 COPY ./user4/flaginhere.txt /home/user4/
+RUN chmod 700 /home/user4
 
 USER user5
 WORKDIR /home/user5/
 COPY ./user5/- /home/user5/
+RUN chmod 700 /home/user5
 
 USER user6
 WORKDIR /home/user6/
 COPY ./user6/flag.txt /home/user6/.bash_history
+RUN chmod 700 /home/user6
 
 USER user7
 WORKDIR /home/user7/
@@ -103,6 +110,8 @@ RUN chmod 700 /home/user8
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
+
+RUN chmod 700 /home/
 
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
