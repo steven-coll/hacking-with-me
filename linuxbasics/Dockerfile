@@ -108,7 +108,6 @@ COPY ./user8/ /home/user8
 RUN chmod 700 /home/user8
 USER root
 RUN chmod +x /home/user8/exit.sh
-USER user8
 CMD source /home/user8/exit.sh
 
 USER root
