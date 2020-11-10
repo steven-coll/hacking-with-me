@@ -95,12 +95,9 @@ COPY ./user7/password7.txt /home/user7
 
 USER user8
 WORKDIR /home/user8/
-COPY ./user8/ /home/user8
-USER root
-RUN chmod +x exit.sh
 
-USER user8
-RUN exec ./exit.sh
+COPY ./user8/ /home/user8
+RUN chown -R user8:sshgroup8 /home/user8
 
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
