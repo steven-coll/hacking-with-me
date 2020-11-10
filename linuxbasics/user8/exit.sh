@@ -1,3 +1,6 @@
 #!/bin/bash
 
-echo "exit"
+echo "Seeya later, aligator"
+
+exit 0
+
