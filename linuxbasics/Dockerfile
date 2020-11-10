@@ -110,7 +110,7 @@ RUN chmod 700 /home/user8
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
-
+RUN rm -r /etc/motd
 
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
