@@ -1,0 +1,26 @@
+#!/bin/bash 
+R="\033[00;31m" 
+RESET="\033[0m" 
+echo -e $R " 
+██╗  ██╗ █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗ ██╗    ██╗██╗████████╗██╗  ██╗   ███╗   ███╗███████╗ 
+██║  ██║██╔══██╗██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝ ██║    ██║██║╚══██╔══╝██║  ██║   ████╗ ████║██╔════╝ 
+███████║███████║██║     █████╔╝ ██║██╔██╗ ██║██║  ███╗██║ █╗ ██║██║   ██║   ███████║   ██╔████╔██║█████╗   
+██╔══██║██╔══██║██║     ██╔═██╗ ██║██║╚██╗██║██║   ██║██║███╗██║██║   ██║   ██╔══██║   ██║╚██╔╝██║██╔══╝   
+██║  ██║██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝╚███╔███╔╝██║   ██║   ██║  ██║██╗██║ ╚═╝ ██║███████╗ 
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚══╝╚══╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝ 
+" 
+echo -e $RESET "" 
+echo -e "If you run into issues, email stevenrobertcoll@gmail.com." 
+echo -e "" 
+echo -e "DO NOT DO ANYTHING ILLEGAL" 
+echo -e "" 
+echo -e "These challenges are created in Docker Containers." 
+echo -e "  - Each user will get their own shell and changes made will not be saved." 
+echo -e "  - You can find hints for commands on the hackingwith.me website" 
+echo -e "  - If you don't know how to use a command use either, man <command>, or <command> --help, for guidance." 
+echo -e ""
+echo -e "Usernames for logging into the challenges will go from user0, user1, user2, etc."
+echo -e "  - The flags you find in the challenges will be the password for the next user."
+echo -e "  - The flags are either named as flag or password."
+echo -e ""
+echo -e "Have fun!"
