@@ -38,8 +38,9 @@ RUN echo 'user1:abc123' | chpasswd
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
 USER user0
 WORKDIR /home/user0/
-COPY ./user0/shadow /home/user0/
-COPY ./user0/passwd /home/user0/
+COPY ./user0/ /home/user0/
+
+RUN chmod 700 /home/user0
 
 USER user1
 WORKDIR /home/user1/
