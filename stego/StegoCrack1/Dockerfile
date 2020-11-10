@@ -84,7 +84,7 @@ RUN mkdir /home/user0/photos
 
 #here I copy the /photos folder from my github, and put it in the user0/photos folder
 COPY ./photos /home/user0/photos
-
+RUN chmod 700 /home/user0
 USER user1
 WORKDIR /home/user1/
 
@@ -92,7 +92,7 @@ RUN mkdir /home/user1/photos1
 RUN mkdir /home/user1/wordlists
 COPY ./photos1 /home/user1/photos1
 COPY ./wordlists/wordlist.txt /home/user1/wordlists
-
+RUN chmod 700 /home/user1
 USER user2
 WORKDIR /home/user2/
 
@@ -100,22 +100,27 @@ RUN mkdir /home/user2/photos2
 RUN mkdir /home/user2/wordlists
 COPY ./photos2 /home/user2/photos2
 COPY ./wordlists/wordlist.txt /home/user2/wordlists
+RUN chmod 700 /home/user2
 
 USER user3
 WORKDIR /home/user3/
 COPY ./user3/password.mp4 /home/user3
+RUN chmod 700 /home/user3
 
 USER user4
 WORKDIR /home/user4/
 COPY ./user4/skate.jpg /home/user4
+RUN chmod 700 /home/user4
 
 USER user5
 WORKDIR /home/user5/
 COPY ./user5 /home/user5
+RUN chmod 700 /home/user5
 
 USER user6
 WORKDIR /home/user6/
 COPY ./user6 /home/user6
+RUN chmod 700 /home/user6
 
 USER root
 
