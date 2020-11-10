@@ -92,17 +92,18 @@ COPY ./user6/flag.txt /home/user6/.bash_history
 USER user7
 WORKDIR /home/user7/
 COPY ./user7/password7.txt /home/user7
+RUN chmod 700 /home/user7
 
 USER user8
 WORKDIR /home/user8/
 
 COPY ./user8/ /home/user8
-
+RUN chmod 700 /home/user8
 
 USER root
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
-RUN chown -R user8:sshgroup8 /home/user8
+
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
