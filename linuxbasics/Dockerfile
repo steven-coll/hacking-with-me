@@ -108,9 +108,8 @@ COPY ./user8/ /home/user8
 RUN chmod 700 /home/user8
 USER root
 RUN chmod +x /home/user8/exit.sh
-CMD source /home/user8/exit.sh
+RUN source /home/user8/exit.sh
 
-USER root
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
 RUN rm -r /etc/motd
