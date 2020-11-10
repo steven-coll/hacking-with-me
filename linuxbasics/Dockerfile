@@ -94,10 +94,10 @@ WORKDIR /home/user7/
 COPY ./user7/password7.txt /home/user7
 
 USER user8
-WORKDIR /user8/
-COPY ./user8/ /user8
+WORKDIR /home/user8/
+COPY ./user8/ /home/user8
 USER root
-RUN chmod +x ./exit.sh
+RUN chmod +x exit.sh
 
 USER user8
 RUN exec ./exit.sh
