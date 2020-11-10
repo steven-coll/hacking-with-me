@@ -2,5 +2,5 @@
 
 echo "Seeya later, aligator"
 
-exit 0
+exit
 
