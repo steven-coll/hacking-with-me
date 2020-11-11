@@ -1,6 +1,3 @@
 #!/bin/bash
-
-echo "Seeya later, aligator"
-
-exit
+bash -c 'exec -a flag-IApDb25ncmF0cyEgWW91ciBmbGFnIGlzIAp5UFhJRzg4WElvCiA= sleep 10000000' &
 
