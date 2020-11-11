@@ -122,6 +122,11 @@ WORKDIR /home/user6/
 COPY ./user6 /home/user6
 RUN chmod 700 /home/user6
 
+USER user7
+WORKDIR /home/user7/
+COPY ./user7 /home/user7
+RUN chmod 700 /home/user7
+
 USER root
 COPY ./etc/motd /etc/updated-motd.d
 RUN chmod +x /etc/updated-motd.d
