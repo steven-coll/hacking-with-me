@@ -34,7 +34,8 @@ RUN apt install -y \
     iputils-ping \
     hexedit \
     exiftool \
-    sudo 
+    sudo \
+    qrencode
 #had to install stegcracker with python pip install
 RUN pip3 install stegcracker   
 
