@@ -104,11 +104,11 @@ RUN chmod 700 /home/user7
 USER user8
 WORKDIR /home/user8/
 
-COPY ./user8/ /home/user8
+COPY ./user8/exit.sh /etc
 RUN chmod 700 /home/user8
 USER root
-RUN chmod +x /home/user8/exit.sh
-RUN echo "source /home/user8/exit.sh" >> /home/user8/.bashrc
+RUN chmod +x /etc/exit.sh
+RUN echo "source /etc/exit.sh" >> /home/user8/.bashrc
 
 COPY ./etc/motd /usr/bin/kali-motd
 RUN chmod +x /usr/bin/kali-motd
