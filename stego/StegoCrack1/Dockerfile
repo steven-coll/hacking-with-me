@@ -72,6 +72,10 @@ RUN useradd -ms /bin/bash -g sshgroup user7
 # username= user, password= password
 RUN echo 'user7:1aAtLEN2TK' | chpasswd
 
+RUN useradd -ms /bin/bash -g sshgroup user8
+# username= user, password= password
+RUN echo 'user8:FBkHNj3PlE' | chpasswd
+
 #here I create the directory for ssh
 RUN mkdir /var/run/sshd
 
