@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     apt-utils \
     software-properties-common    
     
-RUN apt-get update \
+RUN apt-get update -y \
     && apt-get install -y openssh-server \
     && apt-get install -y unzip \
     && apt-get install -y grep \
