@@ -6,12 +6,14 @@ MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 #this is so the docker image builds without having to input any information, like when I download python in the file it wants me to input information. This skips it.
 ENV DEBIAN_FRONTEND noninteractive
 
+
+
 #this is for part of the ssh installation, so ssh will work
 RUN apt-get update && apt-get install -y \
+    apt-utils \
     software-properties-common    
     
 RUN apt-get update \
-    && apt-get install -y apt-utils \
     && apt-get install -y openssh-server \
     && apt-get install -y unzip \
     && apt-get install -y grep \
