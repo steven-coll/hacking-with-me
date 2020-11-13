@@ -9,10 +9,11 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get clean
 
 #this is for part of the ssh installation, so ssh will work
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
+RUN apt-get update && apt-get install -y \
     software-properties-common    
     
 RUN apt-get update \
+    && apt-get install -y apt-utils \
     && apt-get install -y openssh-server \
     && apt-get install -y unzip \
     && apt-get install -y grep \
