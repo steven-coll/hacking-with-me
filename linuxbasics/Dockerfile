@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 #this is for part of the ssh installation, so ssh will work
-RUN apt-get update && apt-get install -y \
+RUN apt-get update -y && apt-get install -y \
     apt-utils \
     software-properties-common    
     
