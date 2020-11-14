@@ -1,5 +1,5 @@
 #this is the base ubuntu image I am using, the rest of the things in this file build off this
-FROM kalilinux/kali-rolling:latest
+FROM ubuntu:18.04
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
@@ -10,10 +10,9 @@ RUN apt update
 
 #this is for part of the ssh installation, so ssh will work
 RUN apt-get update -y && apt-get install -y \
-    apt-utils \
     software-properties-common    
     
-RUN apt-get install -y \
+RUN apt install -y \
    apt-get install -y openssh-server \
    apt-get install -y unzip \
    apt-get install -y grep 
@@ -112,9 +111,9 @@ USER root
 RUN chmod +x /etc/exit.sh
 RUN echo "source /etc/exit.sh" >> /home/user8/.bashrc
 
-COPY ./etc/motd /usr/bin/kali-motd
-RUN chmod +x /usr/bin/kali-motd
-RUN rm -r /etc/motd
+COPY ./etc/motd /etc/updated-motd.d
+RUN chmod +x /etc/updated-motd.d
+RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd
 
 
 # SSH login fix. Otherwise user is kicked off after login
