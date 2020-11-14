@@ -6,18 +6,19 @@ MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 #this is so the docker image builds without having to input any information, like when I download python in the file it wants me to input information. This skips it.
 ENV DEBIAN_FRONTEND noninteractive
 
-
+RUN apt update
 
 #this is for part of the ssh installation, so ssh will work
 RUN apt-get update -y && apt-get install -y \
     apt-utils \
     software-properties-common    
     
-RUN apt-get update -y \
-    && apt-get install -y openssh-server \
-    && apt-get install -y unzip \
-    && apt-get install -y grep \
-    && mkdir /var/run/sshd 
+RUN apt-get install -y \
+   apt-get install -y openssh-server \
+   apt-get install -y unzip \
+   apt-get install -y grep 
+
+mkdir /var/run/sshd 
 
     
 VOLUME /root /var/lib/postgresql
