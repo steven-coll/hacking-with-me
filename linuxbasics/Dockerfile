@@ -13,9 +13,9 @@ RUN apt-get update -y && apt-get install -y \
     software-properties-common    
     
 RUN apt install -y \
-   apt-get install -y openssh-server \
-   apt-get install -y unzip \
-   apt-get install -y grep 
+    openssh-server \
+    unzip \
+    grep 
 
 RUN mkdir /var/run/sshd 
 
