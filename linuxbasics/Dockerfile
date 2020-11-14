@@ -18,7 +18,7 @@ RUN apt-get install -y \
    apt-get install -y unzip \
    apt-get install -y grep 
 
-mkdir /var/run/sshd 
+RUN mkdir /var/run/sshd 
 
     
 VOLUME /root /var/lib/postgresql
