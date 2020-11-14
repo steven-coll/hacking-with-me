@@ -1,5 +1,5 @@
 #this is the base ubuntu image I am using, the rest of the things in this file build off this
-FROM ubuntu:18.04
+FROM debian:stable-slim
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
