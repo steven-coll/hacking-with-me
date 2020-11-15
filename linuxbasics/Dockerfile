@@ -111,8 +111,8 @@ USER root
 RUN chmod +x /etc/exit.sh
 RUN echo "source /etc/exit.sh" >> /home/user8/.bashrc
 
-COPY ./etc/motd /etc/update-motd.d/95-custom
-RUN chmod +x /etc/update-motd.d/95-custom
+COPY ./etc/motd /etc/update-motd.d
+RUN chmod +x /etc/update-motd.d
 RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd
 
 
