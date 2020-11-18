@@ -35,6 +35,8 @@ RUN apt install -y \
     hexedit \
     exiftool \
     sudo \
+    binwalk \
+    unzip \
     zbar-tools
 #had to install stegcracker with python pip install
 RUN pip3 install stegcracker   
