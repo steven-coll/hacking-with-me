@@ -1,5 +1,7 @@
 # Hacking With Me
 
+This repository features the Dockerfiles and other challenge files needed for the hackingwith.me website 
+
 ## How to use:
 
 ````bash
