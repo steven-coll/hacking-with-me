@@ -1,7 +1,8 @@
 # Hacking With Me - CTF
 
 This repository features the Dockerfiles and other challenge files 
-needed for the [hackingwith.me](hackingwith.me) Capture The Flag website
+needed for the [hackingwith.me](hackingwith.me) Capture The Flag website.
+It will store all Dockerfiles of challenges running on hackingwith.me
 
 - Linux Basics Container
   - These challenges go over basic command line tools which are used to find flags to enter the next challenge.
@@ -16,7 +17,7 @@ needed for the [hackingwith.me](hackingwith.me) Capture The Flag website
 ## How to use:
 
 ````bash
-#install Docker
+#installing Docker is required
 sudo apt-get install docker
 # OR
 sudo yum install docker
@@ -27,10 +28,10 @@ sudo yum install docker
 git clone https://github.com/steven-coll/hacking-with-me.git
 # choose a challenge directory
 cd hacking-with-me/challengeyouwanttorun
-# build the image
+# build the docker image
 sudo docker build .
 # find the image id
 sudo docker images
-# start a container with the image
+# run the enviornment with a port to ssh into, eg: 32768
 sudo docker run -d -p 32768:22 *image-id* 
 ````
