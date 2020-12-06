@@ -25,16 +25,12 @@ sudo yum install docker
 
 # clone this repository
 git clone https://github.com/steven-coll/hacking-with-me.git
-
 #choose a challenge directory
 cd hacking-with-me/challengeyouwanttorun
-
 #build the image
 sudo docker build .
-
 #find the image id
 sudo docker images
-
 #start a container with the image
 sudo docker run *image-id* -p *portnumber*
 ````
