@@ -21,7 +21,6 @@ It will store all Dockerfiles of challenges running on hackingwith.me
 sudo apt-get install docker
 # OR
 sudo yum install docker
-
 ---
 # clone this repository
 git clone https://github.com/steven-coll/hacking-with-me.git
