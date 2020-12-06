@@ -17,21 +17,24 @@ needed for the [hackingwith.me](hackingwith.me) Capture The Flag website
 
 ````bash
 #install Docker
-$ sudo apt-get install docker
+sudo apt-get install docker
 OR
-$ sudo yum install docker
+sudo yum install docker
 
 ---
 
-$ git clone https://github.com/steven-coll/hacking-with-me.git
+# clone this repository
+git clone https://github.com/steven-coll/hacking-with-me.git
 
-$ cd hacking-with-me
+#choose a challenge directory
+cd hacking-with-me/challengeyouwanttorun
 
-#then choose a challenge directory
+#build the image
+sudo docker build .
 
-$ cd /challengeyouwanttorun
+#find the image id
+sudo docker images
 
-$ sudo docker build .
-
-$ sudo docker run *image-id* -p *portnumber*
+#start a container with the image
+sudo docker run *image-id* -p *portnumber*
 ````
