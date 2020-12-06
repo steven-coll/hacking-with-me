@@ -1,6 +1,6 @@
 # Hacking With Me
 
-This repository features the Dockerfiles and other challenge files needed for the hackingwith.me Capture The Flag website.
+This repository features the Dockerfiles and other challenge files needed for the [hackingwith.me](hackingwith.me) Capture The Flag website.
 
 Challenges include:
 
