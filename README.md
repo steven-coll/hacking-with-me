@@ -9,4 +9,4 @@ cd /challengeyouwanttorun
 
 sudo docker build .
 
-sudo docker run *container-id* -p *portnumber*
+sudo docker run *image-id* -p *portnumber*
