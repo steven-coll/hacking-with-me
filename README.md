@@ -12,7 +12,7 @@ Challenges include:
 
 - Brute Force Container
   - These challenges go over ways to brute force files and get flags from them which are used to enter the next challenge.
-  - **ATTENTION: This image is still being worked on**
+  - **This image is still being worked on and does not yet compile.**
   
 ## How to use:
 
