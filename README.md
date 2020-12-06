@@ -32,5 +32,5 @@ sudo docker build .
 # find the image id
 sudo docker images
 # start a container with the image
-sudo docker run *image-id* -p *portnumber*
+sudo docker run -d -p 32768:22 *image-id* 
 ````
