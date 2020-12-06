@@ -1,13 +1,10 @@
-How to use:
+git clone https://github.com/steven-coll/hacking-with-me.git
 
-sudo apt install docker.io
+cd hacking-with-me
 
-sudo apt install docker-compose
+#then
+cd /challengeyouwanttorun
 
-git clone https://github.com/steven-coll/test.git
+sudo docker build .
 
-cd test
-
-sudo docker-compose build
-
-sudo docker-compose up -d
+sudo docker run *container-id* -p *portnumber*
