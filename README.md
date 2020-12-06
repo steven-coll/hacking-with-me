@@ -23,7 +23,6 @@ sudo apt-get install docker
 sudo yum install docker
 
 ---
-
 # clone this repository
 git clone https://github.com/steven-coll/hacking-with-me.git
 # choose a challenge directory
