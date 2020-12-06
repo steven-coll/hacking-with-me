@@ -21,7 +21,8 @@ git clone https://github.com/steven-coll/hacking-with-me.git
 
 cd hacking-with-me
 
-#then
+#then choose a challenge directory
+
 cd /challengeyouwanttorun
 
 sudo docker build .
