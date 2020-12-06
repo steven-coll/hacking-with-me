@@ -1,4 +1,4 @@
-# Hacking With Me
+# Hacking With Me - CTF
 
 This repository features the Dockerfiles and other challenge files needed for the [hackingwith.me](hackingwith.me) Capture The Flag cybersecurity learning enviornment.
 
