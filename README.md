@@ -20,9 +20,7 @@ needed for the [hackingwith.me](hackingwith.me) Capture The Flag website
 $ sudo apt-get install docker
 OR
 $ sudo yum install docker
-````
-***
-````bash
+---
 $ git clone https://github.com/steven-coll/hacking-with-me.git
 
 $ cd hacking-with-me
