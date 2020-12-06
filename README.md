@@ -21,8 +21,6 @@ $ sudo apt-get install docker
 OR
 $ sudo yum install docker
 
-````***````
-
 $ git clone https://github.com/steven-coll/hacking-with-me.git
 
 $ cd hacking-with-me
