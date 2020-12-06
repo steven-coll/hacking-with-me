@@ -1,6 +1,6 @@
 # Hacking With Me
 
-How to use:
+## How to use:
 
 ````bash
 git clone https://github.com/steven-coll/hacking-with-me.git
