@@ -1,3 +1,5 @@
+How to use:
+
 git clone https://github.com/steven-coll/hacking-with-me.git
 
 cd hacking-with-me
