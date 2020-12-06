@@ -31,5 +31,8 @@ sudo docker build .
 # find the image id
 sudo docker images
 # run the enviornment with a port to ssh into, eg: 32768
-sudo docker run -d -p 32768:22 *image-id* 
+sudo docker run -d -p 32768:22 *image-id*
+# you can now ssh into it, locally or on an IP/domain webserver depending on how you are setting this up
+ssh user0@localhost -p 32768
+# the password for user0 is "password", the rest of the passwords are the flags achieved from the last challenge.
 ````
