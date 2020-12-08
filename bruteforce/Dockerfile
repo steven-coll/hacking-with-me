@@ -39,10 +39,12 @@ RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
 RUN useradd -ms /bin/bash -g sshgroup jenna
 RUN echo 'jenna:pizza' | chpasswd
+USER root
 RUN /etc/passwd /etc/shadow > jenna1
 
 RUN useradd -ms /bin/bash -g sshgroup kelly
 RUN echo 'kelly:ilovepuppies' | chpasswd
+USER root
 RUN /etc/passwd /etc/shadow > kelly1
 
 RUN useradd -ms /bin/bash -g sshgroup molly
@@ -59,7 +61,7 @@ COPY ./user0/ /home/hackingwithme1/
 #chmod 700 so only that user can access their home directory
 RUN chmod 700 /home/hackingwithme1
 
-RUN chmod 700 /home/hackingwithme1
+
 USER root
 
 # SSH login fix. Otherwise user is kicked off after login
