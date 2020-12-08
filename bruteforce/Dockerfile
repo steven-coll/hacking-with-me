@@ -28,7 +28,7 @@ VOLUME /root /var/lib/postgresql
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
 RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup user0
 # username= user, password= password
-RUN echo 'user0:password' | chpasswd
+RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
 RUN useradd -ms /bin/bash -g sshgroup user1
 # username= user1, password= password
@@ -36,9 +36,9 @@ RUN echo 'user1:abc123' | chpasswd
 
 
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
-USER user0
-WORKDIR /home/user0/
-COPY ./user0/ /home/user0/
+USER hackingwithme1
+WORKDIR /home/hackingwithme1/
+COPY ./user0/ /home/hackingwithme1/
 
 #chmod 700 so only that user can access their home directory
 RUN chmod 700 /home/user0
