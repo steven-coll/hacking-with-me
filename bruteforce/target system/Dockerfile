@@ -8,9 +8,11 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN "deb https://http.kali.org/kali kali-rolling main non-free contrib" > /etc/apt/sources.list
 
 #updating
-RUN apt-get -y update && apt-get clean
+RUN apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get clean
+
+#this is for part of the ssh installation, so ssh will work
 RUN apt-get update && apt-get install -y \
-    software-properties-common   
+    software-properties-common    
 
 #add tools to download here, keep openssh-server. L
 RUN apt-get update \
