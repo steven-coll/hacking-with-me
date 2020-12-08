@@ -5,7 +5,7 @@ MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 #this is so the docker image builds without having to input any information, like when I download python in the file it wants me to input information. This skips it.
 ENV DEBIAN_FRONTEND noninteractive
 
-ECHO "deb https://http.kali.org/kali kali-rolling main non-free contrib" > /etc/apt/sources.list
+RUN "deb https://http.kali.org/kali kali-rolling main non-free contrib" > /etc/apt/sources.list
 
 #updating
 RUN apt-get -y update && apt-get clean
