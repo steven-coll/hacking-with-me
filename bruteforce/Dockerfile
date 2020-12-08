@@ -26,6 +26,7 @@ RUN apt-get update \
     && apt-get install -y vim \
     && apt-get install -y patator \
     && apt-get install -y hashcat \
+    && apt-get install -y sudo \
     && mkdir /var/run/sshd \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config 
 
@@ -33,7 +34,7 @@ RUN apt-get update \
 VOLUME /root /var/lib/postgresql
 
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
-RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup hackingwithme1
+RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup hackingwithme1 sudo
 # username= user, password= password
 RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
