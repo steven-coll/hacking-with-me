@@ -1,5 +1,5 @@
 #this is the base kali image I am using, the rest of the things in this file build off this
-FROM kalilinux/kali-rolling:latest
+FROM debian:stable-slim
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
