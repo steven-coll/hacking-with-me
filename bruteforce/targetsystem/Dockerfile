@@ -1,4 +1,4 @@
-FROM kalilinux/kali-rolling:latest
+FROM debian:stable-slim
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
