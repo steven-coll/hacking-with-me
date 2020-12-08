@@ -34,8 +34,8 @@ RUN apt-get update \
 VOLUME /root /var/lib/postgresql
 
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
-RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup hackingwithme1 sudo
-# username= user, password= password
+RUN useradd -ms /bin/bash hackingwithme1
+RUN usermod -aG sudo hackingwithme1
 RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
 RUN useradd -ms /bin/bash -g sshgroup jenna
