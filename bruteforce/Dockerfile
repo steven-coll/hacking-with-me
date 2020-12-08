@@ -39,11 +39,11 @@ RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
 RUN useradd -ms /bin/bash -g sshgroup jenna
 RUN echo 'jenna:pizza' | chpasswd
-RUN sudo /etc/passwd /etc/shadow > jenna1
+RUN /etc/passwd /etc/shadow > jenna1
 
 RUN useradd -ms /bin/bash -g sshgroup kelly
 RUN echo 'kelly:ilovepuppies' | chpasswd
-RUN sudo /etc/passwd /etc/shadow > kelly1
+RUN /etc/passwd /etc/shadow > kelly1
 
 RUN useradd -ms /bin/bash -g sshgroup molly
 RUN echo 'molly:oceanbreeze235' | chpasswd
