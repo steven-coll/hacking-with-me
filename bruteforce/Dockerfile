@@ -1,10 +1,12 @@
 #this is the base kali image I am using, the rest of the things in this file build off this
-FROM debian:stable-slim
+FROM kalilinux/kali-rolling:latest
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
 #this is so the docker image builds without having to input any information, like when I download python in the file it wants me to input information. This skips it.
 ENV DEBIAN_FRONTEND noninteractive
+
+RUN mkdir -p /usr/share/man/man1
 
 #updating
 RUN apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get clean
