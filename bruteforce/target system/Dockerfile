@@ -7,7 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #updating
 RUN apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get clean
-
+RUN apt-get update && apt-get install -y \
+    software-properties-common   
 
 #add tools to download here, keep openssh-server. L
 RUN apt-get update \
