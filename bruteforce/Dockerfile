@@ -64,7 +64,8 @@ RUN chmod 700 /home/hackingwithme1
 
 
 USER root
-
+RUN echo 'export PATH=/root/bin:$PATH' >> /root/.bashrc
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
