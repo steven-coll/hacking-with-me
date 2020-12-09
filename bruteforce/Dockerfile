@@ -38,20 +38,20 @@ RUN useradd -ms /bin/bash hackingwithme1
 RUN usermod -aG sudo hackingwithme1
 RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup jenna
+RUN useradd -ms /bin/bash jenna
 RUN echo 'jenna:pizza' | chpasswd
 USER root
 RUN unshadow /etc/passwd /etc/shadow > jenna1
 
-RUN useradd -ms /bin/bash -g sshgroup kelly
+RUN useradd -ms /bin/bash kelly
 RUN echo 'kelly:ilovepuppies' | chpasswd
 USER root
 RUN unshadow /etc/passwd /etc/shadow > kelly1
 
-RUN useradd -ms /bin/bash -g sshgroup molly
+RUN useradd -ms /bin/bash molly
 RUN echo 'molly:oceanbreeze235' | chpasswd
 
-RUN useradd -ms /bin/bash -g sshgroup kian
+RUN useradd -ms /bin/bash kian
 RUN echo 'kian:notapassword' | chpasswd
 
 #here I go into the user0 account and make the WORKDIR /home/user0. When they ssh as this user, their home directory will be the WORKDIR.
