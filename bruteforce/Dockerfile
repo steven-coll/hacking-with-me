@@ -28,8 +28,11 @@ RUN apt-get update \
     && apt-get install -y hashcat \
     && apt-get install -y sudo \
     && mkdir /var/run/sshd \
-    && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config 
+    && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
+    && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config \
+    && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
+RUN sudo chmod 755 -R /var/run/sshd
 
 VOLUME /root /var/lib/postgresql
 
@@ -65,7 +68,7 @@ RUN chmod 700 /home/hackingwithme1
 
 USER root
 RUN echo 'export PATH=/root/bin:$PATH' >> /root/.bashrc
-RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
