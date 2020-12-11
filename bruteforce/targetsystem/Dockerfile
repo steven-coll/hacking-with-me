@@ -1,18 +1,17 @@
-FROM kalilinux/kali-rolling:latest
+FROM ubuntu:18.04
 
 MAINTAINER Steven Coll "stevenrobertcoll@gmail.com"
 
 #this is so the docker image builds without having to input any information, like when I download python in the file it wants me to input information. This skips it.
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN mkdir -p /usr/share/man/man1
 
-#updating
-RUN apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove && apt-get clean
+RUN apt update
 
 #this is for part of the ssh installation, so ssh will work
-RUN apt-get update && apt-get install -y \
+RUN apt-get update -y && apt-get install -y \
     software-properties-common    
+    
 
 #add tools to download here, keep openssh-server. L
 RUN apt-get update \
@@ -25,11 +24,11 @@ RUN apt-get update \
     && apt-get install -y vim \
     && apt-get install -y patator \
     && apt-get install -y hashcat \
+    && apt-get install -y sudo \
     && mkdir /var/run/sshd \
-    && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config 
+    && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 
-VOLUME /root /var/lib/postgresql
 
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
 RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup jimmy
