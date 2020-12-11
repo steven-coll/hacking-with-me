@@ -38,12 +38,12 @@ RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 RUN useradd -ms /bin/bash jenna
 RUN echo 'jenna:pizza' | chpasswd
 USER root
-RUN unshadow /etc/passwd /etc/shadow > jenna1
+RUN unshadow /etc/passwd /etc/shadow > /home/hackingwithme1/jenna1
 
 RUN useradd -ms /bin/bash kelly
 RUN echo 'kelly:ilovepuppies' | chpasswd
 USER root
-RUN unshadow /etc/passwd /etc/shadow > kelly1
+RUN unshadow /etc/passwd /etc/shadow > /home/hackingwithme1/kelly1
 
 RUN useradd -ms /bin/bash molly
 RUN echo 'molly:oceanbreeze235' | chpasswd
