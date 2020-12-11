@@ -29,6 +29,8 @@ RUN apt-get update \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 
+RUN useradd -ms /bin/bash hackingwithme2
+RUN echo 'hackingwithme2:bruteforce2' | chpasswd
 
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
 RUN groupadd sshgroup && useradd -ms /bin/bash -g sshgroup jimmy
@@ -40,6 +42,8 @@ RUN echo 'blair:bobMarley4evr' | chpasswd
 RUN useradd -ms /bin/bash -g sshgroup james
 RUN echo 'james:imfortyseven' | chpasswd
 
+USER hackingwithme1
+WORKDIR /home/hackingwithme1/
 
 USER root
 
