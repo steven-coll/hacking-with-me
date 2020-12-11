@@ -32,7 +32,6 @@ RUN apt-get update \
 
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
 RUN useradd -ms /bin/bash hackingwithme1
-RUN usermod -aG sudo hackingwithme1
 RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
 RUN useradd -ms /bin/bash jenna
@@ -61,7 +60,6 @@ RUN chmod 700 /home/hackingwithme1
 
 
 USER root
-RUN echo 'export PATH=/root/bin:$PATH' >> /root/.bashrc
 
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
