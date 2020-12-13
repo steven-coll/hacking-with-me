@@ -31,7 +31,7 @@ RUN apt-get update \
 
 
 #here I am creating a group called "sshgroup" and then I create a user "user 0" which is added to the group
-RUN useradd -ms /bin/bash hackingwithme1
+RUN useradd -ms /bin/bash hackingwithme1 && adduser hackingwithme1 sudo
 RUN echo 'hackingwithme1:bruteforce1' | chpasswd
 
 RUN useradd -ms /bin/bash jenna
