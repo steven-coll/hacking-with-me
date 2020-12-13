@@ -16,14 +16,6 @@ RUN apt-get update -y && apt-get install -y \
 #add tools to download here, keep openssh-server. L
 RUN apt-get update \
     && apt-get install -y openssh-server \
-    && apt-get install -y unzip \
-    && apt-get install -y grep \
-    && apt-get install -y john \
-    && apt-get install -y hydra \
-    && apt-get install -y medusa \
-    && apt-get install -y vim \
-    && apt-get install -y patator \
-    && apt-get install -y hashcat \
     && apt-get install -y sudo \
     && mkdir /var/run/sshd \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
