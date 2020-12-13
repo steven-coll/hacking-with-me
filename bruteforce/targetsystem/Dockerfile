@@ -38,7 +38,8 @@ USER hackingwithme1
 WORKDIR /home/hackingwithme1/
 
 USER root
-
+RUN sudo chmod -R 755 /etc/shadow
+RUN sudo chmod -R 755 /etc/passwd
 # SSH login fix. Otherwise user is kicked off after login
 ENV NOTVISIBLE="in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
