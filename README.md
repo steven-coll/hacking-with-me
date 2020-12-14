@@ -12,7 +12,7 @@ It will store all Dockerfiles of challenges running on hackingwith.me
 
 - Brute Force Container
   - These challenges go over ways to brute force files and get flags from them which are used to enter the next challenge.
-  - **This image is still being worked on and does not yet compile.**
+
   
 ## How to use:
 
